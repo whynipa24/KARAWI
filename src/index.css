@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-maroon-950: #38070B;
+  --color-maroon-900: #4A0B10;
+  --color-maroon-800: #5B0E14;
+  --color-maroon-700: #76161E;
+  --color-maroon-600: #8F2029;
+  --color-maroon-100: #F5E1E3;
+
+  --color-cream-50: #FFFBF3;
+  --color-cream-100: #F7EFE1;
+  --color-cream-200: #EFE2CA;
+  --color-cream-300: #DFCCA8;
+
+  --color-gold-300: #F0CB7D;
+  --color-gold-400: #DFB054;
+  --color-gold-500: #C69032;
+  --color-gold-600: #9C6D1E;
+
+  --color-ink-900: #2B1810;
+  --color-ink-700: #553B2E;
+  --color-ink-500: #7B6052;
+}
+
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: smooth;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  h1, h2, .font-serif-display {
+    font-family: var(--font-display);
+  }
+}
+
+/* Subtle Jambi songket / batik ornamental pattern background */
+.jambi-pattern-bg {
+  background-color: #5B0E14;
+  background-image:
+    radial-gradient(circle at 20% 25%, rgba(223, 176, 84, 0.14) 0%, transparent 45%),
+    radial-gradient(circle at 85% 80%, rgba(223, 176, 84, 0.12) 0%, transparent 45%),
+    repeating-linear-gradient(
+      45deg,
+      rgba(223, 176, 84, 0.045) 0px,
+      rgba(223, 176, 84, 0.045) 1px,
+      transparent 1px,
+      transparent 14px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      rgba(223, 176, 84, 0.045) 0px,
+      rgba(223, 176, 84, 0.045) 1px,
+      transparent 1px,
+      transparent 14px
+    );
+}
+
+.jambi-cream-pattern {
+  background-color: #F7EFE1;
+  background-image:
+    radial-gradient(rgba(198, 144, 50, 0.09) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(91, 14, 20, 0.22);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(91, 14, 20, 0.4);
+}
+
+@keyframes gongRipple {
+  0% {
+    transform: scale(0.85);
+    opacity: 0.75;
+  }
+  100% {
+    transform: scale(1.65);
+    opacity: 0;
+  }
+}
+
+.animate-gong-ripple {
+  animation: gongRipple 550ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.pb-safe {
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}

@@ -1,0 +1,8 @@
+{
+  "name": "KARAWI – Digital Karawitan Jambi",
+  "description": "Platform pembelajaran interaktif seni Karawitan Jambi mencakup 8 instrumen tradisional, simulasi audio, partitur sinkron, pola permainan, latihan mandiri, kuis evaluasi, dan perpustakaan budaya.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
